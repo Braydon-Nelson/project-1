@@ -14,7 +14,7 @@ $(document).ready(function () {
         }).then(function (response) {
 
             console.log(response.Title)
-            $(".has-background-info").text("Movie Title: " + response.Title)
+            // $(".has-background-info").text("Movie Title: " + response.Title)
 
         })
 
