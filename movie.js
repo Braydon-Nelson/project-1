@@ -4,7 +4,7 @@ $(document).ready(function () {
     function searchMovie(movie) {
 
 
-        var movie = "Space Jam"
+        var movie = "up"
 
         var queryURL = "http://www.omdbapi.com/?t=" + movie + "&apikey=trilogy&"
 
@@ -14,7 +14,13 @@ $(document).ready(function () {
         }).then(function (response) {
 
             console.log(response.Title)
-            // $(".has-background-info").text("Movie Title: " + response.Title)
+            $("#movieTitle").text(response.Title)
+            $("#movieYear").text("Release Year: " + response.Year)
+            $("#movieRated").text("Rated: " + response.Rated)
+            $("#movieGenre").text("Genre: " + response.Genre)
+            $("#movieActors").text("Actors: " + response.Actors)
+            $("#moviePlot").text("Plot: " + response.Plot)
+            $("#movieCover").attr("src", response.Poster)
 
         })
 
