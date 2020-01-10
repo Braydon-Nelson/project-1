@@ -34,7 +34,7 @@
                     <div class="has-background-primary">
                         <div class="card has-background-primary">
                             <div class="card-image">
-                                <figure class="image is-4by3">
+                                <figure class="image">
                                     <img src="https://bulma.io/images/placeholders/1280x960.png" href="meme.html"
                                         alt="Placeholder image">
                                 </figure>
@@ -46,7 +46,23 @@
 
                 <!-- RIGHT SIDE -->
 
-                <div class="column is-half">
+                <div class="column ">
+                    <article class="message is-large is-primary">
+                        <div class="message-header">
+                            <p>Choose an image</p>
+                        </div>
+                        <div class="message-body">
+                            <div id="imgSection" class="columns" style="overflow-x: auto;">
+
+                                <!-- IMAGE CODE GOES HERE -->
+
+                                <div class="column is-one-quarter">
+                                    <img src="https://bulma.io/images/placeholders/128x128.png">
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
                     <article class="message is-large is-primary">
                         <div class="message-header">
                             <p>Add Text</p>
@@ -62,42 +78,15 @@
                                     <input class="input is-primary" type="text" placeholder="Bottom Text">
                                 </div>
                             </div>
-                        </div>
-                    </article>
-                    <article class="message is-large is-primary">
-                        <div class="message-header">
-                            <p>Choose an image</p>
-                        </div>
-
-
-                        <div class="message-body">
-                            <div class="table-container">
-                                <table class="table">
-                                    <tbody>
-                                        <tr>
-                                            <td class="is-128x128">
-                                                <img src="https://bulma.io/images/placeholders/128x128.png">
-                                            </td>
-
-
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div class="control">
+                                <button class="button is-primary">Submit</button>
                             </div>
-
-
                         </div>
                     </article>
                 </div>
             </div>
         </div>
-
-
-
     </section>
-
-
-
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
