@@ -33,7 +33,17 @@ $(document).ready(function () {
             console.log(memeArray)
 
 
-        })
+            for (let i = 0; i < memeArray.length; i++) {
+                const element = memeArray[i];
+                var codeBlock =
+                    '<div class="column is-one-quarter">' +
+                    '<img class="img-option" data-img-id="' + element.id + '" src="' + element.url + '">' +
+                    '</div>';
+
+                document.getElementById("imgSection").innerHTML += codeBlock;
+            }
+
+        });
 
 
     }
