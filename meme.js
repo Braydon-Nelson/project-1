@@ -1,10 +1,11 @@
+function imageSelect(t) {
+    $("#img-view").attr("src", $(t).attr("src"));
+    var imgID = $(t).data("img-id")
+
+}
 $(document).ready(function () {
 
-    function memeGenerator() {
-
-
-
-
+    function memeList() {
         var queryURL = "https://api.imgflip.com/get_memes"
 
         $.ajax({
@@ -37,7 +38,7 @@ $(document).ready(function () {
                 const element = memeArray[i];
                 var codeBlock =
                     '<div class="column is-one-quarter">' +
-                    '<img class="img-option" data-img-id="' + element.id + '" src="' + element.url + '">' +
+                    '<img class="img-option" data-img-id="' + element.id + '" src="' + element.url + '" onclick="imageSelect(this)">' +
                     '</div>';
 
                 document.getElementById("imgSection").innerHTML += codeBlock;
@@ -47,7 +48,13 @@ $(document).ready(function () {
 
 
     }
-    memeGenerator();
+
+
+
+    function memeGenerator() {
+
+    }
+    memeList();
 
 
 })
