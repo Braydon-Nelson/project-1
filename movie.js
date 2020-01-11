@@ -3,7 +3,7 @@ function searchMovie(movieInput) {
 
 
 
-    var queryURL = "http://www.omdbapi.com/?t=" + movieInput + "&apikey=trilogy&"
+    var queryURL = "https://www.omdbapi.com/?t=" + movieInput + "&apikey=trilogy&"
 
     $.ajax({
         url: queryURL,
