@@ -1,31 +1,33 @@
+function searchMovie(movieInput) {
+
+
+
+
+    var queryURL = "http://www.omdbapi.com/?t=" + movieInput + "&apikey=trilogy&"
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+
+
+        $("#movieTitle").text(response.Title)
+        $("#movieYear").text("Release Year: " + response.Year)
+        $("#movieRated").text("Rated: " + response.Rated)
+        $("#movieGenre").text("Genre: " + response.Genre)
+        $("#movieActors").text("Actors: " + response.Actors)
+        $("#moviePlot").text("Plot: " + response.Plot)
+        $("#movieCover").attr("src", response.Poster)
+
+    })
+
+
+}
+
 $(document).ready(function () {
 
 
-    function searchMovie(movieInput) {
 
-
-
-
-        var queryURL = "http://www.omdbapi.com/?t=" + movieInput + "&apikey=trilogy&"
-
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-        }).then(function (response) {
-
-
-            $("#movieTitle").text(response.Title)
-            $("#movieYear").text("Release Year: " + response.Year)
-            $("#movieRated").text("Rated: " + response.Rated)
-            $("#movieGenre").text("Genre: " + response.Genre)
-            $("#movieActors").text("Actors: " + response.Actors)
-            $("#moviePlot").text("Plot: " + response.Plot)
-            $("#movieCover").attr("src", response.Poster)
-
-        })
-
-
-    }
 
     var searchArray = []
 
@@ -45,14 +47,31 @@ $(document).ready(function () {
 
         console.log(searchArray)
 
-        var option = document.createElement("option");
+        // var option = document.createElement("option");
 
-        $(option).attr("class", "option1")
-        console.log("button being made");
+        // $(option).attr("class", "option1")
+        // console.log("button being made");
 
         // $(button).attr("type", "button")
-        option.innerHTML = movieInput
-        $(".formInput").append(option)
+        // option.innerHTML = movieInput
+        // $(".formInput").append(option)
+
+        if (searchArray.length <= 4) {
+            console.log(true)
+        } else {
+            searchArray = searchArray.slice(1)
+        }
+
+        $("#option1").text(searchArray[0])
+        $("#option2").text(searchArray[1])
+        $("#option3").text(searchArray[2])
+        $("#option4").text(searchArray[3])
+
+        // var formInput = document.getElementsByClassName("formInput")
+        // var formInputText = formInput.options[formInput.selectedIndex].value;
+
+
+
 
 
         searchMovie(movieInput)
@@ -87,10 +106,11 @@ $(document).ready(function () {
 
     // })
 
-    $(".searchHistoryButton").on("click", function () {
+    $(".searchHistoryButton").on("click", function (event) {
+        event.preventDefault()
         console.log("click listener");
 
-        movieInput = $(".option1").text();
+        movieInput = $(".formInput").val();
 
 
 
