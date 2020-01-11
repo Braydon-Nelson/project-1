@@ -1,6 +1,8 @@
+var imgID = "";
+
 function imageSelect(t) {
     $("#img-view").attr("src", $(t).attr("src"));
-    var imgID = $(t).data("img-id")
+    imgID = $(t).data("img-id")
 
 }
 $(document).ready(function () {
@@ -11,16 +13,16 @@ $(document).ready(function () {
         $.ajax({
             url: queryURL,
             method: "GET"
-        }).then(function (response) {
+        }).then(function (imgResponse) {
 
-            console.log(response.data.memes)
+            console.log(imgResponse.data.memes)
 
 
             var sortedArray = []
 
 
-            for (let i = 0; i < response.data.memes.length; i++) {
-                const element = response.data.memes[i];
+            for (let i = 0; i < imgResponse.data.memes.length; i++) {
+                const element = imgResponse.data.memes[i];
 
                 if (element.box_count === 2) {
 
@@ -50,10 +52,28 @@ $(document).ready(function () {
     }
 
 
+    $("#searchMeme").on("click", function () {
+        console.log("--------------------------------------------------");
 
-    function memeGenerator() {
+        var text0 = $("#text0").val();
+        var text1 = $("#text1").val();
+        console.log(imgID);
 
-    }
+
+        var memeURL = "https://api.imgflip.com/caption_image?username=the-cooler-ones&password=OnlyCoolPeople123&template_id=" + imgID + "&text0=" + text0 + "&text1=" + text1 + ""
+
+        console.log(text0);
+        console.log(text1);
+
+        $.ajax({
+            url: memeURL,
+            method: "GET"
+        }).then(function (memeResponse) {
+            console.log(memeResponse.data.url);
+            $("#img-view").attr("src", memeResponse.data.url);
+
+        });
+    });
     memeList();
 
 
