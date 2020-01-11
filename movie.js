@@ -48,9 +48,12 @@ $(document).ready(function () {
         var option = document.createElement("option");
 
         $(option).attr("class", "option1")
+        console.log("button being made");
+
         // $(button).attr("type", "button")
         option.innerHTML = movieInput
         $(".formInput").append(option)
+
 
         searchMovie(movieInput)
     });
@@ -62,7 +65,7 @@ $(document).ready(function () {
         // grabbing string out of local storage
         var item = localStorage.getItem("search Item", searchItem)
 
-        console.log(item)
+
         // turning the string of cities into an array
         var ar = item.split(',');
 
@@ -71,13 +74,28 @@ $(document).ready(function () {
         // grabbing the last city searched out of an array no matter how big of array
         var movieInput = ar.slice(-1)[0]
 
-        console.log(movieInput);
+
         searchMovie(movieInput)
     }
 
-    $(".option1").on("click", function () {
-        movieInput = $(".option1").val()
+    // $(".option1").on("click", function () {
+    //     console.log("click listener");
+
+    //     movieInput = $(".option1").text()
+    //     console.log(movieInput)
+
+
+    // })
+
+    $(".searchButton").click(function () {
+        console.log("click listener");
+
+        movieInput = $(".option1").text();
+
+
         console.log(movieInput)
+
+        searchMovie(movieInput)
 
 
     })
