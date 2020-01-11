@@ -33,11 +33,11 @@ $(document).ready(function () {
         // Preventing the button from trying to submit the form
         event.preventDefault();
         // Storing the city
-        var movieInput = $(".movieSearch").prev().val().trim();
+        var movieInput = $(".movieSearchInput").val()
 
         console.log(movieInput)
 
-        var searchItem = $(this).prev().val()
+        var searchItem = movieInput
         searchArray.push(searchItem)
 
         localStorage.setItem("search Item", searchArray)
