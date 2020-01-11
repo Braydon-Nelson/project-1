@@ -29,7 +29,7 @@ $(document).ready(function () {
 
     var searchArray = []
 
-    $(".movieSearch").click(function (event) {
+    $(".movieSearch").on("click", function (event) {
         // Preventing the button from trying to submit the form
         event.preventDefault();
         // Storing the city
@@ -87,10 +87,11 @@ $(document).ready(function () {
 
     // })
 
-    $(".searchButton").click(function () {
+    $(".searchHistoryButton").on("click", function () {
         console.log("click listener");
 
         movieInput = $(".option1").text();
+
 
 
         console.log(movieInput)
