@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Movie Explorer</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/magnific-popup.min.css">
+
+    <link rel="stylesheet" href="style.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 
@@ -74,6 +77,7 @@
                 </div>
             </div>
 
+
             <div class="columns is-3">
 
                 <!-- LEFT SIDE -->
@@ -98,6 +102,22 @@
                     <article class="message is-large is-info">
                         <div class="message-header">
                             <p id="movieTitle">Movie Name</p>
+                            <div class="content">
+
+                                <a href="#videoStory" class="button is-info is-light more" id="videoLink">Watch
+                                    Trailer</a>
+                                <!-- <div id="videoStory" class="mfp-hide" style="max-width: 75%; margin: 0 auto;">
+                                    <iframe width="853" height="480" src="https://www.youtube.com/embed/oXoe3GWygq0?rel=0"
+                                        frameborder="0" allowfullscreen></iframe>
+                                </div> -->
+                                <figure id="videoStory" class="image is-16by9 mfp-hide"
+                                    style=" max-width: 80%; margin: 100px auto; margin-top: 0px; ">
+
+                                    <iframe id="trailerInput" class="has-ratio" width="640" height="360"
+                                        src="https://www.youtube.com/embed/apXprAxHaPU" frameborder="0"
+                                        allowfullscreen></iframe>
+                                </figure>
+                            </div>
                         </div>
                         <div class="message-body">
 
@@ -120,6 +140,8 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.min.js"></script>
         <script src="movie.js"></script>
 
     </section>
