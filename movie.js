@@ -19,6 +19,31 @@ function searchMovie(movieInput) {
         $("#moviePlot").text("Plot: " + response.Plot)
         $("#movieCover").attr("src", response.Poster)
 
+        var movieId = response.imdbID
+        console.log(movieId);
+
+        var queryURL = "https://api.themoviedb.org/3/movie/" + movieId + "/videos?api_key=b0e9bad104d41f0ff925307fedcd6cdf"
+
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+
+            var trailerLink = "https://www.youtube.com/embed/" + response.results[0].key
+
+            $("#trailerInput").attr("src", trailerLink)
+
+            $('#videoLink')
+                .magnificPopup({
+                    type: 'inline',
+                    midClick: true
+                })
+
+            console.log(trailerLink)
+
+        })
+
     })
 
 
