@@ -47,6 +47,12 @@ Simply choose which application you would like to use, the Meme Generator or Mov
 1. Type the name of the movie you want to know about in the search bar and click 'search'
 2. Enjoy all the information of the movie you searched for
 
+
+## Authors
+
+* **Braydon Nelson** 
+* **Ryan Thomas**
+
 Link to example readme:
 
 https://braydon-nelson.github.io/project-1/
